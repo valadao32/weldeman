@@ -1,20 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.app', ["current" => "dashboard", "user_name" => Auth::user()->name, "user_email" => Auth::user()->email ])
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="width: 18rem;">
                 <div class="card-header">Dashboard</div>
-
+                {{ Auth::user()->name }}
+                {{ Auth::user()->email }}
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                   
                 </div>
             </div>
         </div>

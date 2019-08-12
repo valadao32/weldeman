@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div class="container d-flex flex-column justify-content-between vh-100">
@@ -15,7 +15,7 @@
                     <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                 </g>
                 </svg>
-                <span class="brand-name">Weldeman Dashboard</span>
+                <span class="brand-name"><h3>Weldeman</h3></span>
             </a>
             </div>
         </div>
@@ -48,24 +48,20 @@
                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}/>
                         <div class="control-indicator"></div>
                         <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
+                            Lembrar-me
                         </label>
                     </label>
             
                     </div>
-                    <p><a class="text-blue" href="#">Forgot Your Password?</a></p>
+                    <p><a class="text-blue" href="#">Esqueceu a senha?</a></p>
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">
                     {{ __('Login') }}   
                 </button>
-                <p>Don't have an account yet ?
-                    <a class="text-blue" href="/register">Sign Up</a>
+                <p>Ainda não tem conta?
+                    <a class="text-blue" href="/register">Registre-se</a>
                 </p>
-                @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
-                @endif
+            
                 </div>
             </div>
             </form>
@@ -79,7 +75,5 @@
     </p>
     </div>
 </div>
-
-
 
 @endsection

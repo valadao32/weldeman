@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div class="container d-flex flex-column justify-content-between vh-100">
@@ -15,7 +15,7 @@
                             <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                         </g>
                         </svg>
-                        <span class="brand-name">Weldeman Dashboard</span>
+                        <span class="brand-name"><h3>Weldeman</h3></span>
                     </a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group col-md-12 ">
                                 <input type="password" class="form-control input-lg" id="password-confirm" placeholder="Confirme a Senha" name="password_confirmation" required autocomplete="new-password">
-                                {{ __('Confirm Password') }}    
+                                 
                             </div>
                             <div class="col-md-12">
                             <div class="d-inline-block mr-3">
@@ -61,7 +61,7 @@
                                     Eu aceito as condições
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">{{ __('Register') }}</button>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Registrar</button>
                             <p>Já possui uma conta!?
                                 <a class="text-blue" href="/login">Login</a>
                             </p>

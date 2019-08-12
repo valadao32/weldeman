@@ -15,15 +15,18 @@ class Clientes extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('number')->unique()->nullable();
+            $table->string('nome')->nullable();
+            $table->string('tel')->unique()->nullable();
+            $table->string('vendedor');
+            $table->string('cidade');
+            $table->string('compania');
             $table->integer('cliente_level')->nullable();
             $table->date('last_call')->format('d.m.Y');
             $table->date('next_call')->format('d.m.Y');
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            
             $table->timestamps();
+            $table->string('obs');
         });
     }
 
