@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/tabela_principal', 'TabelaPrincipalController@api_index');
+Route::resource('/tabela_principal', 'TabelaPrincipalController');

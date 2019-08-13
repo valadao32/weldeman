@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/tabela_principal', 'TabelaPrincipalController@index');
+Route::get('/tabela_principal', 'TabelaPrincipalController@view_index');

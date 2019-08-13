@@ -43,13 +43,15 @@
 
 </head>
 <body>
-    @guest  
+    @guest
+    <script language="JavaScript"> 
+        window.location="login"; 
+    </script> 
     @else
         @component('sidebar-component', [
             "current" => $current
         ])
         @endcomponent
-    @endguest
     <main class="py-4">
         <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main container-fluid">
             
@@ -69,6 +71,7 @@
     <script src="{{ asset('js/js_bootstrap-datepicker.js') }}" defer></script>
     <script src="{{ asset('js/js_custom.js') }}" defer></script>
     
+    @endguest
 </body>
 </html>
 

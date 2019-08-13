@@ -14,16 +14,15 @@ class TabelaPrincipalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function api_index()
+    public function index()
     {
-        $clientes = Clientes::all();
+        $clientes = Clientes::all()->where('cliente_level', 1);
         return json_encode($clientes);
     }
 
-    public function index()
+    public function view_index()
     {
-        $clientes = Clientes::all();
-        return view('tabela_principal', compact('clientes'));
+        return view('tabela_principal');
     }
 
     /**
@@ -55,7 +54,8 @@ class TabelaPrincipalController extends Controller
      */
     public function show($id)
     {
-        //
+        $clientes = Clientes::find($id);
+        return json_encode($clientes);
     }
 
     /**
@@ -78,7 +78,17 @@ class TabelaPrincipalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cliente = Clientes::find($id);
+        if (isset($cliente)){
+            $cliente->nome = $request->input('nome');
+            $cliente->tel = $request->input('tel');
+            $cliente->vendedor = $request->input('vendedor');
+            $cliente->cidade = $request->input('cidade');
+            $cliente->compania = $request->input('compania');
+            $cliente->last_call = $request->input('last_call');
+            $cliente->save();
+            return json_encode($cliente);
+        }
     }
 
     /**
